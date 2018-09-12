@@ -1,6 +1,7 @@
 package com.seckill.dao;
 
 import com.seckill.entity.SuccessKilled;
+import org.apache.ibatis.annotations.Param;
 
 /**
  *
@@ -15,12 +16,12 @@ public interface SuccessKilledDao {
      * 插入的行数
      *
      * */
-    int insertSuccessKilled(long seckillId,long userPhone);
+    int insertSuccessKilled(@Param("seckillId") long seckillId,@Param("userPhone") long userPhone);
 
     /**
      * 更具id查询successKilled并携带秒杀产品对象
      * @param seckillId
      * @return
      * */
-    SuccessKilled qureByIdWithSeckill(long seckillId);
+    SuccessKilled qureByIdWithSeckill(@Param("seckillId") long seckillId,@Param("phone") long phone);
 }

@@ -53,7 +53,7 @@ slf4j是规范/接口
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.35</version>
+      <version>8.0.11</version>
       <scope>runtime</scope>
     </dependency>
     <!--c3p0数据库连接池-->
