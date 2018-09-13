@@ -3,6 +3,8 @@ package com.seckill.service;
 import com.seckill.dto.Exposer;
 import com.seckill.dto.SeckillExecution;
 import com.seckill.entity.Seckill;
+import com.seckill.exception.RepeatKillException;
+import com.seckill.exception.SeckillExcption;
 
 import java.util.List;
 
@@ -39,5 +41,6 @@ public interface SeckillService {
      * @param userPhone
      * */
 
-    SeckillExecution executeSeckill(long seckillId, long userPhone, String md5)throws Exception;
+    SeckillExecution executeSeckill(long seckillId, long userPhone, String md5)
+            throws SeckillExcption,RepeatKillException,SeckillExcption;
 }

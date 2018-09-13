@@ -12,12 +12,21 @@
         and number >0;
     </update>
 
-    <select id="queryById" parameterType="long" resultType="Seckill">
+    <select id="queryById"  resultMap="getSeckill">
         select seckill_id,name,number ,start_time,end_time,create_time
         from seckill where seckill_id=#{seckillId}
     </select>
 
-    <select id="queryAll" resultType="Seckill">
+    <resultMap id="getSeckill" type="Seckill">
+        <id property="seckillId" jdbcType="BIGINT" column="seckill_id"/>
+        <result property="name" jdbcType="VARCHAR" column="name"/>
+        <result property="number" jdbcType="INTEGER" column="number"/>
+        <result property="startTime" jdbcType="TIMESTAMP" column="start_time"/>
+        <result property="endTime" jdbcType="TIMESTAMP" column="end_time"/>
+        <result property="createTime" jdbcType="TIMESTAMP" column="create_time"/>
+    </resultMap>
+
+    <select id="queryAll" resultType="com.seckill.entity.Seckill">
         select seckill_id,name,number ,start_time,end_time,create_time
         from seckill
         order by create_time desc

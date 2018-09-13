@@ -4,7 +4,7 @@ package com.seckill.exception;
  *
  *
  * */
-public class RepeatKillException extends RuntimeException{
+public class RepeatKillException extends SeckillExcption{
     public RepeatKillException(String message) {
         super(message);
     }
