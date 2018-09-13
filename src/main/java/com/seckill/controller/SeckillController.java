@@ -31,7 +31,7 @@ public class SeckillController {
     public String list(Model model){
         //获取描述列表
         List<Seckill> list=seckillService.getSeckillList();
-        model.addAttribute(list);
+        model.addAttribute("list",list);
         return "list";
     }
 
