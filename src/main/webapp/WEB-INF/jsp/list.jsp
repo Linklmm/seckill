@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="common/tag.jsp"%>
+<!DOCTYPE html>
 <html>
 <head>
     <title>秒杀列表</title>
@@ -30,8 +31,18 @@
                            <tr>
                                <td>${sk.name}</td>
                                <td>${sk.number}</td>
-                               <td></td>
-                               <td></td>
+                               <td>
+                                   <fmt:formatDate value="${sk.startTime}"  pattern="YY-MM-dd HH:mm:ss"/>
+                               </td>
+                               <td>
+                                   <fmt:formatDate value="${sk.endTime}"  pattern="YY-MM-dd HH:mm:ss"/>
+                               </td>
+                               <td>
+                                   <fmt:formatDate value="${sk.createTime}"  pattern="YY-MM-dd HH:mm:ss"/>
+                               </td>
+                               <td>
+                                   <a class="btn btn_info" href="/seckill/${sk.seckillId}/detail" target="_blank">link</a>
+                               </td>
                            </tr>
                        </c:forEach>
                     </tbody>
