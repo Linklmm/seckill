@@ -52,7 +52,7 @@ public class SeckillController {
         return "detail";
     }
 
-    //ajax json
+    //ajax json暴露秒杀接口的方法
     @RequestMapping(value = "/{seckillId}/exposer",method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
     @ResponseBody
@@ -83,7 +83,8 @@ public class SeckillController {
 
         try {
             SeckillResult<SeckillExecution> result;
-            SeckillExecution seckillExecution=seckillService.executeSeckill(seckillId,phone,md5);
+            //SeckillExecution seckillExecution=seckillService.executeSeckill(seckillId,phone,md5);
+            SeckillExecution seckillExecution=seckillService.executeSeckillProcedure(seckillId,phone,md5);
             return new SeckillResult<SeckillExecution>(true,seckillExecution);
         }catch (RepeatKillException e){
             SeckillExecution execution=new SeckillExecution(seckillId,SeckillStatEnum.REPEAT_KILL);
